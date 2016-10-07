@@ -30,7 +30,12 @@ local def = {
 		lifetime = 300, -- 5 Minutes
 		jump_height = 1.0,
 		silent = true,
-		panic_speed = 2.1
+		panic_speed = 2.1,
+		follow_items = {"farming:seed_wheat", "farming:seed_cotton"},
+		follow_speed = 1.5,
+		follow_radius = 5,
+		follow_stop_distance = 1.5,
+		tame_items = {"farming:seed_wheat", "farming:seed_cotton"},
 	},
 
 	modes = {
@@ -51,6 +56,7 @@ local def = {
 			idle2 = {start = 41, stop = 61, speed = 70},
 			pick = {start = 103, stop = 155, speed = 50},
 			walk = {start = 3, stop = 38, speed = 50},
+			follow = {start = 3, stop = 38, speed = 107},
 			swim = {start = 42, stop = 102, speed = 40},
 			panic = {start = 42, stop = 102, speed = 55},
 			death = {start = 156, stop = 176, speed = 28, loop = false, duration = 2.12},

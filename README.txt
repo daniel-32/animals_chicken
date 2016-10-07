@@ -12,8 +12,8 @@ Adds chickens to Minetest (requires Animals mod available from https://github.co
 
 Chickens spawn on grass blocks.
 Untamed chickens remain for 5 minutes before despawning.
-Chickens do not follow players.
-Chickens cannot be tamed.
+Chickens will follow players holding wheat seeds or cotton seeds.
+Chickens can be tamed by feeding them wheat seeds or cotton seeds.
 Chickens cannot be bred.
 
 
