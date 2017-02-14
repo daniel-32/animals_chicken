@@ -1,6 +1,6 @@
 Chicken for Animals mod
 ================================
-Copyright (c) 2016 Daniel <https://github.com/daniel-32>
+Copyright (c) 2016 Daniel <https://github.com/danielmeek32>
 
 Modified from the original version for Creatures MOB-Engine (cme)
 Copyright (c) 2015 BlockMen <blockmen2015@gmail.com>
@@ -8,7 +8,7 @@ Copyright (c) 2015 BlockMen <blockmen2015@gmail.com>
 Version: 1.0 Alpha
 
 
-Adds chickens to Minetest (requires Animals mod available from https://github.com/daniel-32/animals).
+Adds chickens to Minetest (requires Animals mod available from https://github.com/danielmeek32/animals).
 
 Chickens spawn on grass blocks.
 Untamed chickens remain for 5 minutes before despawning.
@@ -30,4 +30,4 @@ Sounds:
 - animals_chicken*.ogg, dobroide(https://freesound.org/people/dobroide) CC BY 3.0
 Github:
 ~~~~~~~
-https://github.com/daniel-32/animals_chicken
+https://github.com/danielmeek32/animals_chicken
