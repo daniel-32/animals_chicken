@@ -39,10 +39,10 @@ local def = {
 	},
 
 	modes = {
-		idle = {chance = 0.25, duration = 5, direction_change_interval = 3},
-		idle2 = {chance = 0.69, duration = 0.8},
-		pick = {chance = 0.2, duration = 2},
-		walk = {chance = 0.2, duration = 5.5, moving_speed = 0.7, direction_change_interval = 2},
+		idle = {chance = 0.2, duration = 5, direction_change_interval = 3},
+		idle2 = {chance = 0.5, duration = 0.8},
+		pick = {chance = 0.15, duration = 2},
+		walk = {chance = 0.15, duration = 5.5, moving_speed = 0.7, direction_change_interval = 2},
 	},
 
 	model = {
