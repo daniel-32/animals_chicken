@@ -1,5 +1,5 @@
 --= Chicken for Animals mod =--
--- Copyright (c) 2016 Daniel <https://github.com/danielmeek32>
+-- Copyright (c) 2017 Daniel <https://github.com/danielmeek32>
 --
 -- Modified from the original version for Creatures MOB-Engine (cme)
 -- Copyright (c) 2015 BlockMen <blockmen2015@gmail.com>
@@ -25,24 +25,24 @@
 local def = {
 	-- general
 	name = "animals:chicken",
-	stats = {
+	parameters = {
 		hp = 5,
-		lifetime = 300, -- 5 Minutes
-		jump_height = 1.0,
+		life_time = 300, -- 5 Minutes
 		silent = true,
 		panic_speed = 2.1,
 		follow_items = {"farming:seed_wheat", "farming:seed_cotton"},
 		follow_speed = 1.5,
-		follow_radius = 5,
+		follow_distance = 5,
 		follow_stop_distance = 1.5,
 		tame_items = {"farming:seed_wheat", "farming:seed_cotton"},
+		death_duration = 2.12,
 	},
 
 	modes = {
-		idle = {chance = 0.25, duration = 5, update_yaw = 3},
+		idle = {chance = 0.25, duration = 5, direction_change_interval = 3},
 		idle2 = {chance = 0.69, duration = 0.8},
 		pick = {chance = 0.2, duration = 2},
-		walk = {chance = 0.2, duration = 5.5, moving_speed = 0.7, update_yaw = 2},
+		walk = {chance = 0.2, duration = 5.5, moving_speed = 0.7, direction_change_interval = 2},
 	},
 
 	model = {
@@ -51,42 +51,42 @@ local def = {
 		collisionbox = {-0.25, -0.01, -0.3, 0.25, 0.45, 0.3},
 		rotation = -90.0,
 		collide_with_objects = false,
-		animations = {
-			idle = {start = 0, stop = 1, speed = 10},
-			idle2 = {start = 41, stop = 61, speed = 70},
-			pick = {start = 103, stop = 155, speed = 50},
-			walk = {start = 3, stop = 38, speed = 50},
-			follow = {start = 3, stop = 38, speed = 107},
-			swim = {start = 42, stop = 102, speed = 40},
-			panic = {start = 42, stop = 102, speed = 55},
-			death = {start = 156, stop = 176, speed = 28, loop = false, duration = 2.12},
-		},
+	},
+
+	animations = {
+		idle = {start = 0, stop = 1, speed = 10},
+		idle2 = {start = 41, stop = 61, speed = 70},
+		pick = {start = 103, stop = 155, speed = 50},
+		walk = {start = 3, stop = 38, speed = 50},
+		follow = {start = 3, stop = 38, speed = 107},
+		swim = {start = 42, stop = 102, speed = 40},
+		panic = {start = 42, stop = 102, speed = 55},
+		death = {start = 156, stop = 176, speed = 28, loop = false},
 	},
 
 	sounds = {
-		on_damage = {name = "animals_chicken_hit", gain = 0.5, distance = 10},
-		on_death = {name = "animals_chicken_hit", gain = 0.5, distance = 10},
-		swim = {name = "animals_splash", gain = 1.0, distance = 10},
-		random = {
-			idle = {name = "animals_chicken", gain = 0.9, distance = 12, time_min = 8, time_max = 50},
-		},
+		damage = {name = "animals_chicken_hit", gain = 0.5, max_hear_distance = 10},
+		death = {name = "animals_chicken_hit", gain = 0.5, max_hear_distance = 10},
+		swim = {name = "animals_splash", gain = 1.0, max_hear_distance = 10},
+		idle = {name = "animals_chicken", gain = 0.9, max_hear_distance = 12, min_interval = 2, max_interval = 4},
 	},
 
 	spawning = {
-		abm_nodes = {
-			spawn_on = {"default:dirt_with_grass"},
-		},
-		abm_interval = 55,
-		abm_chance = 7800,
-		max_number = 1,
-		number = 1,
-		light = {min = 8, max = 15},
-		height_limit = {min = 0, max = 150},
+		nodes = {"default:dirt_with_grass"},
+		interval = 60,
+		chance = 16384,
+		min_time = 6000,
+		max_time = 18000,
+		min_height = 0,
+		max_height = 128,
+		surrounding_distance = 16,
+		max_surrounding_count = 0,
+		spawn_count = 1,
 	},
 
 	drops = {
-		{"animals:flesh"},
+		{name = "animals:flesh"},
 	},
 }
 
-animals.registerMob(def)
+animals.register(def)
